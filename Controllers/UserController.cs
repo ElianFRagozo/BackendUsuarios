@@ -9,6 +9,7 @@ namespace BackendUsuario.Controllers
     public class AuthController : ControllerBase
     {
         private readonly FirebaseAuth _firebaseAuth;
+        private static List<string> RevokedTokens = new List<string>();
 
         public AuthController(FirebaseAuth firebaseAuth)
         {
@@ -46,14 +47,6 @@ namespace BackendUsuario.Controllers
             {
                 return BadRequest(e.Message);
             }
-        }
-
-
-        [HttpPost("signout")]
-        public async Task<IActionResult> SignOutAsync()
-        {
-            // Implementa la lógica para cerrar sesión del usuario
-            return Ok("Usuario desconectado correctamente.");
         }
 
         [HttpPost("googlesignin")]
