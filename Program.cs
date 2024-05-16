@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 // Add FirebaseAdmin
 FirebaseApp.Create(new AppOptions
 {
-    Credential = GoogleCredential.FromFile("C://Users//elian//source//repos//BackendUsuario//fb-notas-firebase-adminsdk-zbhby-826ba65d54.json")
+    Credential = GoogleCredential.FromFile("/app/fb-notas-firebase-adminsdk-zbhby-826ba65d54.json")
 });
 
 // Add FirebaseAuth

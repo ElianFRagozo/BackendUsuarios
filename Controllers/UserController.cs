@@ -35,20 +35,6 @@ namespace BackendUsuario.Controllers
             }
         }
 
-        [HttpPost("signin")]
-        public async Task<IActionResult> SignInAsync(string idToken)
-        {
-            try
-            {
-                var token = await _firebaseAuth.VerifyIdTokenAsync(idToken);
-                return Ok(token);
-            }
-            catch (FirebaseAuthException e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
         [HttpPost("googlesignin")]
         public async Task<IActionResult> GoogleSignInAsync(string idToken)
         {
